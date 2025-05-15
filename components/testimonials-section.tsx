@@ -9,34 +9,34 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    position: "CEO, TechStart",
+    name: "Somebody",
+    position: "Not Yet",
     content:
-      "Working with John was an absolute pleasure. His attention to detail and creative approach to problem-solving resulted in a website that exceeded our expectations. He was responsive, professional, and delivered on time.",
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     image: "/placeholder.svg?height=100&width=100",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    position: "Marketing Director, GrowthLabs",
+    name: "Someone",
+    position: "Not Yet",
     content:
-      "John's expertise in both design and development is rare to find. He created a seamless user experience that has significantly improved our conversion rates. His ability to understand our business needs and translate them into an effective digital solution was impressive.",
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     image: "/placeholder.svg?height=100&width=100",
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    position: "Founder, CreativeMinds",
+    name: "Somebody",
+    position: "Not Yet",
     content:
-      "We hired John to redesign our e-commerce platform, and the results were outstanding. The new site is not only visually stunning but also performs exceptionally well. Our sales have increased by 40% since the launch.",
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     image: "/placeholder.svg?height=100&width=100",
   },
   {
     id: 4,
-    name: "David Kim",
-    position: "CTO, InnovateTech",
+    name: "Someone",
+    position: "Not Yet",
     content:
-      "John's technical skills are top-notch. He implemented complex features with ease and provided valuable insights that improved our product. His code is clean, well-documented, and maintainable.",
+      "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     image: "/placeholder.svg?height=100&width=100",
   },
 ]
