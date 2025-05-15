@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 263 70% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --radius: 0.5rem;
+
+    --chart-1: 263 70% 50%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 130 87% 65%;
+    --chart-5: 336 80% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500;
+  }
+
+  .gradient-text-green {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-500;
+  }
+
+  .gradient-text-orange {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-500;
+  }
+
+  .gradient-border {
+    position: relative;
+    border-radius: var(--radius);
+  }
+
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    padding: 2px;
+    background: linear-gradient(45deg, #8b5cf6, #3b82f6, #10b981);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .glass-effect {
+    @apply bg-secondary/30 backdrop-blur-md border border-white/10;
+  }
+
+  .project-card {
+    @apply relative overflow-hidden rounded-lg transition-all duration-500;
+  }
+
+  .project-overlay {
+    @apply absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300 flex flex-col justify-end p-6;
+  }
+
+  .animated-gradient-background {
+    background: linear-gradient(-45deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.15), rgba(16, 185, 129, 0.15));
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  .skill-icon {
+    @apply flex items-center justify-center w-8 h-8 rounded-md mr-2 bg-secondary/50;
+  }
+}
+
+/* Use regular CSS for the hover effect that was causing issues */
+.project-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-in-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 3s infinite;
+}
+
+.animate-typing {
+  width: 0;
+  animation: typing 3.5s steps(40, end) forwards;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.animate-blink {
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.7);
+}
