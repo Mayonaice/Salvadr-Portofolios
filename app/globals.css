@@ -103,6 +103,21 @@
   .skill-icon {
     @apply flex items-center justify-center w-8 h-8 rounded-md mr-2 bg-secondary/50;
   }
+  
+  /* Custom video player styling */
+  .video-player {
+    transition: object-fit 0.3s ease;
+  }
+  
+  /* Make video controls always visible and styled */
+  .video-player::-webkit-media-controls {
+    opacity: 1 !important;
+    display: flex !important;
+  }
+  
+  .video-player::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+  }
 }
 
 /* Use regular CSS for the hover effect that was causing issues */

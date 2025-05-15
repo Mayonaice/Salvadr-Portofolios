@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { motion } from "framer-motion"
 import { ArrowLeft, ExternalLink, Github, Play } from "lucide-react"
@@ -51,7 +51,7 @@ const projectsData = [
     additionalVideos: [
       {
         title: "Account Overview",
-        src: "/placeholder.svg?height=600&width=800",
+        src: "/videos/JS-Question-Generator/pilihankesulitan.mp4",
       },
       {
         title: "Transaction Process",
@@ -138,6 +138,8 @@ export default function ProjectDetail() {
   const [isLoading, setIsLoading] = useState(true)
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+  const [isVideo, setIsVideo] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     if (params.slug) {
@@ -145,10 +147,18 @@ export default function ProjectDetail() {
       if (foundProject) {
         setProject(foundProject)
         setSelectedVideo(foundProject.mainVideoSrc)
+        setIsVideo(foundProject.mainVideoSrc.endsWith('.mp4'))
       }
     }
     setIsLoading(false)
   }, [params.slug])
+
+  useEffect(() => {
+    // Check if selected video is a video file
+    if (selectedVideo) {
+      setIsVideo(selectedVideo.endsWith('.mp4'))
+    }
+  }, [selectedVideo])
 
   if (isLoading) {
     return (
@@ -190,28 +200,49 @@ export default function ProjectDetail() {
             <div className="glass-effect rounded-lg overflow-hidden relative group">
               <div
                 className={`absolute inset-0 bg-black/50 flex items-center justify-center ${
-                  isVideoPlaying ? "opacity-0" : "opacity-100"
+                  isVideoPlaying ? "opacity-0 pointer-events-none" : "opacity-100"
                 } group-hover:opacity-0 transition-opacity duration-300 z-10 cursor-pointer`}
-                onClick={() => setIsVideoPlaying(true)}
+                onClick={() => {
+                  if (isVideo && videoRef.current) {
+                    videoRef.current.play();
+                    setIsVideoPlaying(true);
+                  }
+                }}
               >
-                <div className="bg-primary/90 rounded-full p-4 transform transition-transform duration-300 group-hover:scale-110">
-                  <Play className="h-8 w-8 text-white" />
-                </div>
+                {isVideo && (
+                  <div className="bg-primary/90 rounded-full p-4 transform transition-transform duration-300 group-hover:scale-110">
+                    <Play className="h-8 w-8 text-white" />
+                  </div>
+                )}
               </div>
-              <video
-                className="w-full aspect-video object-cover"
-                controls={isVideoPlaying}
-                autoPlay={isVideoPlaying}
-                muted={!isVideoPlaying}
-                loop={!isVideoPlaying}
-                playsInline
-                poster={selectedVideo || project.mainVideoSrc}
-                onPlay={() => setIsVideoPlaying(true)}
-                onPause={() => setIsVideoPlaying(false)}
-              >
-                <source src={selectedVideo || project.mainVideoSrc} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {isVideo ? (
+                <video
+                  ref={videoRef}
+                  className="w-full aspect-video object-cover video-player"
+                  controls={true}
+                  muted={!isVideoPlaying}
+                  loop={!isVideoPlaying}
+                  playsInline
+                  preload="auto"
+                  src={selectedVideo || ""}
+                  onPlay={() => setIsVideoPlaying(true)}
+                  onPause={() => setIsVideoPlaying(false)}
+                  onEnded={() => setIsVideoPlaying(false)}
+                  onError={(e) => {
+                    console.error("Video error:", e);
+                    setIsVideo(false);
+                  }}
+                  style={{ objectFit: isVideoPlaying ? "contain" : "cover" }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <img 
+                  src={selectedVideo || ""} 
+                  alt={project.title} 
+                  className="w-full aspect-video object-cover" 
+                />
+              )}
             </div>
 
             <div className="grid grid-cols-3 gap-4 mt-4">
@@ -224,14 +255,27 @@ export default function ProjectDetail() {
                     selectedVideo === video.src ? "border-primary" : "border-transparent"
                   }`}
                   onClick={() => {
-                    setSelectedVideo(video.src)
-                    setIsVideoPlaying(false)
+                    setSelectedVideo(video.src);
+                    setIsVideoPlaying(false);
+                    // Reset video state when selecting a new video
+                    if (videoRef.current) {
+                      videoRef.current.pause();
+                      videoRef.current.currentTime = 0;
+                    }
+                    // Check if it's a video
+                    setIsVideo(video.src.endsWith('.mp4'));
                   }}
                 >
                   <div className="relative">
-                    <video className="w-full aspect-video object-cover" muted loop playsInline poster={video.src}>
-                      <source src={video.src} type="video/mp4" />
-                    </video>
+                    <div className="w-full aspect-video bg-secondary/30 object-cover flex items-center justify-center overflow-hidden">
+                      {video.src.endsWith('.mp4') ? (
+                        <video className="w-full h-full object-cover" muted loop playsInline preload="metadata">
+                          <source src={video.src} type="video/mp4" />
+                        </video>
+                      ) : (
+                        <img src={video.src} alt={video.title} className="w-full h-full object-cover" />
+                      )}
+                    </div>
                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                       <Play className="h-6 w-6 text-white/80" />
                     </div>
