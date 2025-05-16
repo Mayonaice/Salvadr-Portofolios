@@ -17,7 +17,6 @@ export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setIsLoading(false)
       setTimeout(() => setIsLoaded(true), 300)

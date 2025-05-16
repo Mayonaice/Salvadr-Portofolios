@@ -16,35 +16,21 @@ const services = [
     icon: <Code className="h-10 w-10 text-primary" />,
     title: "Desktop",
     description:
-      "Making usefull, ",
+      "Making a useful desktop application that has functions to assist your manual work",
     gradient: "from-blue-500 to-cyan-400",
   },
   {
     icon: <Smartphone className="h-10 w-10 text-primary" />,
     title: "Mobile Development",
     description:
-      "Developing cross-platform mobile applications that provide native-like experiences on iOS and Android.",
+      "Developing cross-platform mobile applications that provide native-like experiences on Android.",
     gradient: "from-cyan-400 to-emerald-500",
-  },
-  {
-    icon: <Globe className="h-10 w-10 text-primary" />,
-    title: "SEO Optimization",
-    description:
-      "Improving website visibility and search engine rankings to drive organic traffic and increase conversions.",
-    gradient: "from-emerald-500 to-yellow-400",
   },
   {
     icon: <Palette className="h-10 w-10 text-primary" />,
     title: "UI/UX Design",
     description: "Creating intuitive, engaging user interfaces and experiences that delight users and achieve business goals.",
     gradient: "from-yellow-400 to-orange-500",
-  },
-  {
-    icon: <Lightbulb className="h-10 w-10 text-primary" />,
-    title: "Consulting",
-    description:
-      "Providing expert advice on technology strategy, architecture, and implementation to achieve business objectives.",
-    gradient: "from-orange-500 to-red-500",
   },
 ]
 

@@ -150,11 +150,6 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                <div className="mt-8">
-                  <h4 className="font-medium mb-2">Working Hours</h4>
-                  <p className="text-foreground/80">Monday - Friday: 9AM - 6PM</p>
-                  <p className="text-foreground/80">Weekend: By Appointment</p>
-                </div>
               </CardContent>
             </Card>
           </motion.div>

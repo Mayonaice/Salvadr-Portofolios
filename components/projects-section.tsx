@@ -11,39 +11,30 @@ import { Badge } from "@/components/ui/badge"
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    category: "Web Development",
-    description: "A modern e-commerce platform with advanced filtering and payment integration.",
-    videoSrc: "/placeholder.svg?height=600&width=800",
-    detailLink: "/projects/e-commerce-platform",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe"],
+    title: "E-Booking Apartment Web",
+    category: "Website",
+    description: "A website that allows users to book apartments rooms with a simple and user-friendly interface. And many fiture that you can see at details",
+    videoSrc: "/videos/E-Booking Apartment Web/pilihankosong.mp4",
+    detailLink: "/projects/e-booking-apartment-web",
+    tags: ["Laravel", "Tailwind CSS", "Javascript"],
   },
   {
     id: 2,
-    title: "Mobile Banking App",
-    category: "Mobile App",
-    description: "Secure and intuitive mobile banking application with biometric authentication.",
-    videoSrc: "/placeholder.svg?height=600&width=800",
-    detailLink: "/projects/mobile-banking-app",
-    tags: ["React Native", "Redux", "Node.js", "MongoDB"],
+    title: "JS Question Generator",
+    category: "Website",
+    description: "A website that allows users to generate Javascript questions with different difficulty levels.",
+    videoSrc: "/videos/JS-Question-Generator/pilihankesulitan.mp4",
+    detailLink: "/projects/js-question-generator",
+    tags: ["Python"],
   },
   {
     id: 3,
-    title: "AI Content Generator",
-    category: "AI / Machine Learning",
-    description: "Content generation tool powered by advanced AI models for marketing teams.",
+    title: "My Own Portofolios Website",
+    category: "Website",
+    description: "A website that is my own portfolio, where I can share my projects and experiences.",
     videoSrc: "/placeholder.svg?height=600&width=800",
-    detailLink: "/projects/ai-content-generator",
-    tags: ["Python", "TensorFlow", "React", "FastAPI"],
-  },
-  {
-    id: 4,
-    title: "Real-time Analytics Dashboard",
-    category: "Data Visualization",
-    description: "Interactive dashboard for real-time data analysis and business intelligence.",
-    videoSrc: "/placeholder.svg?height=600&width=800",
-    detailLink: "/projects/analytics-dashboard",
-    tags: ["React", "D3.js", "Node.js", "Socket.io"],
+    detailLink: "/projects/salvador-portfolios",
+    tags: ["React", "Next JS", "Tailwind CSS"],
   },
 ]
 
@@ -52,7 +43,7 @@ export default function ProjectsSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const filters = ["All", "Web Development", "Mobile App", "AI / Machine Learning", "Data Visualization"]
+  const filters = ["All", "Website"]
 
   const filteredProjects =
     activeFilter === "All" ? projects : projects.filter((project) => project.category === activeFilter)

@@ -18,7 +18,7 @@ const skillsData = {
   ],
   frontend: [
     { name: "Tailwind CSS", value: 90 },
-    { name: "Blade PHP", value: 80 },
+    { name: "Blade Laravel", value: 80 },
     { name: "React JS", value: 70 },
     { name: "Next.js", value: 35 },
   ],

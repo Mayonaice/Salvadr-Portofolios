@@ -11,12 +11,12 @@ import { Badge } from "@/components/ui/badge"
 const projectsData = [
   {
     id: 1,
-    slug: "e-commerce-platform",
-    title: "E-Commerce Platform",
-    category: "Web Development",
+    slug: "ebooking-apartment-web",
+    title: "E-Booking Apartment Web",
+    category: "Website",
     description:
-      "A comprehensive e-commerce solution built with Next.js, featuring product management, cart functionality, payment processing, and order tracking. The platform includes an admin dashboard for inventory management and sales analytics.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Prisma", "PostgreSQL"],
+      "A website that allows users to book apartments rooms with a simple and user-friendly interface. and created with device recognition features so that users do not need to create an account first, WhatsApp bot feature when the user has booked a room",
+    technologies: ["Laravel", "Tailwind CSS", "Javascript"],
     mainVideoSrc: "/placeholder.svg?height=600&width=800",
     additionalVideos: [
       {
@@ -35,48 +35,45 @@ const projectsData = [
     liveLink: "https://example.com",
     githubLink: "https://github.com/example/project",
     challenges:
-      "One of the main challenges was implementing a real-time inventory system that could handle high traffic during sales events. We solved this by using a combination of optimistic UI updates and server-side caching.",
-    results:
-      "The platform has seen a 45% increase in conversion rates and a 30% reduction in cart abandonment since launch. The client reported a 60% increase in overall sales within the first three months.",
+      "implementing a website with features that can recognize the device so that users don't have to create an account first and also connect to the WhatsApp API to send order details when the user has successfully booked a room.",
   },
   {
     id: 2,
-    slug: "mobile-banking-app",
-    title: "Mobile Banking App",
-    category: "Mobile App",
+    slug: "js-question-generator",
+    title: "JS Question Generator",
+    category: "Website",
     description:
-      "A secure and user-friendly mobile banking application that allows users to manage their finances on the go. Features include account management, transaction history, bill payments, and biometric authentication for enhanced security.",
-    technologies: ["React Native", "Redux", "Node.js", "Express", "MongoDB", "JWT"],
-    mainVideoSrc: "/placeholder.svg?height=600&width=800",
+      "A website that allows users to generate Javascript questions with different difficulty levels.",
+    technologies: ["Python"],
+    mainVideoSrc: "/videos/JS-Question-Generator/pilihankesulitan.mp4",
     additionalVideos: [
       {
-        title: "Account Overview",
+        title: "Difficulty Option",
         src: "/videos/JS-Question-Generator/pilihankesulitan.mp4",
       },
       {
-        title: "Transaction Process",
-        src: "/placeholder.svg?height=600&width=800",
+        title: "Answer Question",
+        src: "/videos/JS-Question-Generator/menjawabsoal.mp4",
       },
       {
-        title: "Security Features",
-        src: "/placeholder.svg?height=600&width=800",
+        title: "History",
+        src: "/videos/JS-Question-Generator/riwayat.mp4",
       },
     ],
     liveLink: "https://example.com",
     githubLink: "https://github.com/example/project",
     challenges:
-      "Security was the primary concern for this project. We implemented multiple layers of encryption and biometric authentication to ensure user data remained protected at all times.",
-    results:
-      "The app has been downloaded over 50,000 times with a 4.8/5 rating on app stores. User engagement metrics show that 70% of users access the app at least three times per week.",
+      "Create an application that has a feature to generate JavaScript questions so that the generated questions are quite varied and difficult, and also provides corrections to the answered questions.",
+    
   },
   {
     id: 3,
-    slug: "ai-content-generator",
-    title: "AI Content Generator",
-    category: "AI / Machine Learning",
+    slug: "salvador-portfolios",
+    title: "My Own Portofolios Website",
+    category: "Website",
     description:
-      "An AI-powered content generation tool that helps marketing teams create engaging content for various platforms. The application uses advanced language models to generate blog posts, social media content, and product descriptions.",
-    technologies: ["Python", "TensorFlow", "React", "FastAPI", "Docker", "AWS"],
+      "A website that is my own portfolio, where I can share my projects and experiences.",
+    technologies: ["React", "Next JS", "Tailwind CSS"],
     mainVideoSrc: "/placeholder.svg?height=600&width=800",
     additionalVideos: [
       {
@@ -95,9 +92,7 @@ const projectsData = [
     liveLink: "https://example.com",
     githubLink: "https://github.com/example/project",
     challenges:
-      "Training the AI model to generate content that matched each client's brand voice was challenging. We developed a fine-tuning system that allowed the model to learn from existing brand content.",
-    results:
-      "Marketing teams using the tool reported a 70% reduction in content creation time and a 35% increase in engagement metrics for AI-generated content compared to manually created content.",
+      "implement an attractive UI and place a demo video of my project on this website as well as provide a chart for the skills I am proficient in",
   },
   {
     id: 4,
@@ -308,11 +303,6 @@ export default function ProjectDetail() {
               <div className="mb-6">
                 <h3 className="text-lg font-semibold mb-2">Challenges</h3>
                 <p className="text-foreground/80">{project.challenges}</p>
-              </div>
-
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2">Results</h3>
-                <p className="text-foreground/80">{project.results}</p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
