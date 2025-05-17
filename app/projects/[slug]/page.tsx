@@ -315,18 +315,22 @@ export default function ProjectDetail() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
+                <a href={project.liveLink} target="_blank">
                 <Button className="bg-primary hover:bg-primary/90 flex-1 group relative overflow-hidden">
                   <span className="relative z-10 flex items-center">
                     <ExternalLink className="mr-2 h-4 w-4 transition-transform group-hover:rotate-45" /> Live Demo
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </Button>
+                </a>
+                <a href={project.githubLink} target="_blank">
                 <Button
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary hover:text-white flex-1 transition-all duration-300"
                 >
                   <Github className="mr-2 h-4 w-4" /> View Code
                 </Button>
+                </a>
               </div>
             </div>
           </div>
