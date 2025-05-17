@@ -32,9 +32,16 @@ export default function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      // Buka Gmail dengan parameter yang sudah terisi
+      const subject = encodeURIComponent(formData.subject || "Contact from Portfolio");
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=vadodali131@gmail.com&su=${subject}&body=${body}`;
+      window.open(mailtoLink, '_blank');
+      
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       setSubmitStatus("success")
       setFormData({
         name: "",

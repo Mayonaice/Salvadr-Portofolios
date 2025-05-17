@@ -19,7 +19,7 @@ const skillsData = {
   frontend: [
     { name: "Tailwind CSS", value: 90 },
     { name: "Blade Laravel", value: 80 },
-    { name: "React JS", value: 70 },
+    { name: "React", value: 70 },
     { name: "Next.js", value: 35 },
   ],
   backend: [
@@ -71,18 +71,27 @@ export default function SkillsSection() {
             </CardHeader>
             <CardContent>
               <Tabs defaultValue="programming" className="w-full">
-                <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6">
-                  <TabsTrigger value="programming">Programming</TabsTrigger>
-                  <TabsTrigger value="frontend">Frontend</TabsTrigger>
-                  <TabsTrigger value="backend">Backend</TabsTrigger>
-                  <TabsTrigger value="other">Other</TabsTrigger>
+                <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-6 w-full flex-wrap h-auto min-h-[40px] items-start">
+                  <TabsTrigger value="programming" className="w-full">Programming</TabsTrigger>
+                  <TabsTrigger value="frontend" className="w-full">Frontend</TabsTrigger>
+                  <TabsTrigger value="backend" className="w-full">Backend</TabsTrigger>
+                  <TabsTrigger value="other" className="w-full">Other</TabsTrigger>
                 </TabsList>
 
                 {Object.entries(skillsData).map(([category, data]) => (
                   <TabsContent key={category} value={category} className="h-[400px]">
                     <div className="h-full w-full p-4">
                       <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={data} layout="vertical" margin={{ top: 20, right: 30, left: 80, bottom: 20 }}>
+                        <BarChart 
+                          data={data} 
+                          layout="vertical" 
+                          margin={{ 
+                            top: 20, 
+                            right: 30, 
+                            left: 30, 
+                            bottom: 20 
+                          }}
+                        >
                           <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.1)" />
                           <XAxis
                             type="number"
@@ -96,7 +105,7 @@ export default function SkillsSection() {
                             type="category"
                             tick={{ fill: "rgba(255,255,255,0.9)", fontSize: 13 }}
                             axisLine={{ stroke: "rgba(255,255,255,0.3)" }}
-                            width={80}
+                            width={60}
                           />
                           <ChartTooltip
                             cursor={{ fill: "rgba(255,255,255,0.05)" }}
