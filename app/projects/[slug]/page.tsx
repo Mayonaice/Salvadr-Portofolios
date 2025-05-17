@@ -17,20 +17,24 @@ const projectsData = [
     description:
       "A website that allows users to book apartments rooms with a simple and user-friendly interface. and created with device recognition features so that users do not need to create an account first, WhatsApp bot feature when the user has booked a room",
     technologies: ["Laravel", "Tailwind CSS", "Javascript"],
-    mainVideoSrc: "/placeholder.svg?height=600&width=800",
+    mainVideoSrc: "/videos/ezco/home.mp4",
     additionalVideos: [
       {
-        title: "Product Filtering Demo",
-        src: "/placeholder.svg?height=600&width=800",
+        title: "Home Page",
+        src: "/videos/ezco/home.mp4",
       },
       {
-        title: "Checkout Process",
-        src: "/placeholder.svg?height=600&width=800",
+        title: "Booking Process and filter by floor plan",
+        src: "/videos/ezco/bookrooms.mp4",
       },
-      {
-        title: "Admin Dashboard",
-        src: "/placeholder.svg?height=600&width=800",
-      },
+        {
+          title: "Admin Dashboard",
+          src: "/videos/ezco/admindashboard.mp4",
+        },
+        {
+          title: "WhatsApp Bot after book confirmed",
+          src: "/videos/ezco/whatsappbot.mp4",
+        },
     ],
     liveLink: "https://example.com",
     githubLink: "https://github.com/example/project",
@@ -75,19 +79,23 @@ const projectsData = [
     description:
       "A website that is my own portfolio, where I can share my projects and experiences.",
     technologies: ["React", "Next JS", "Tailwind CSS"],
-    mainVideoSrc: "/placeholder.svg?height=600&width=800",
+    mainVideoSrc: "/videos/porto/landingpage.mp4",
     additionalVideos: [
       {
-        title: "Content Generation Demo",
-        src: "/placeholder.svg?height=600&width=800",
+        title: "Landing Page",
+        src: "/videos/porto/landingpage.mp4",
       },
       {
-        title: "Template Customization",
-        src: "/placeholder.svg?height=600&width=800",
+        title: "Projects Detail",
+        src: "/videos/porto/projectsdemovideo.mp4",
       },
       {
-        title: "Analytics Dashboard",
-        src: "/placeholder.svg?height=600&width=800",
+        title: "Responsiveness",
+        src: "/videos/porto/responsiveness.mp4",
+      },
+      {
+        title: "Send Email",
+        src: "/videos/porto/sendgmail.mp4",
       },
     ],
     liveLink: "https://example.com",
