@@ -73,7 +73,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-secondary/50 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
         >
-          <p className="text-foreground/60 text-sm">&copy; {currentYear} John Doe. All rights reserved.</p>
+          <p className="text-foreground/60 text-sm">&copy; {currentYear} Penantian Salvador Dali. All rights reserved.</p>
 
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="text-foreground/60 hover:text-primary text-sm transition-colors duration-300">

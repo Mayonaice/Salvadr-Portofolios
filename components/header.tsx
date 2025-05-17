@@ -58,7 +58,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Portfolio
+            Salvador
           </motion.span>
         </Link>
 

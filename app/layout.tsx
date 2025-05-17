@@ -10,7 +10,7 @@ const fontSans = FontSans({
 })
 
 export const metadata = {
-  title: "Professional Portfolio",
+  title: "Salvador Portfolio",
   description: "A professional portfolio showcasing my work and skills",
     generator: 'v0.dev'
 }
