@@ -36,8 +36,8 @@ const projectsData = [
           src: "/videos/ezco/whatsappbot.mp4",
         },
     ],
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/example/project",
+    liveLink: "",
+    githubLink: "https://github.com/Mayonaice/EZColiving-Web",
     challenges:
       "implementing a website with features that can recognize the device so that users don't have to create an account first and also connect to the WhatsApp API to send order details when the user has successfully booked a room.",
   },
@@ -65,8 +65,8 @@ const projectsData = [
       },
       
     ],
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/example/project",
+    liveLink: "https://github.com/Mayonaice/Simple-Question-Generator-for-JavaScript-Practice/releases",
+    githubLink: "https://github.com/Mayonaice/Simple-Question-Generator-for-JavaScript-Practice",
     challenges:
       "Create an application that has a feature to generate JavaScript questions so that the generated questions are quite varied and difficult, and also provides corrections to the answered questions.",
     
@@ -98,8 +98,8 @@ const projectsData = [
         src: "/videos/porto/sendgmail.mp4",
       },
     ],
-    liveLink: "https://example.com",
-    githubLink: "https://github.com/example/project",
+    liveLink: "https://salvadr-portofolios.vercel.app/",
+    githubLink: "https://github.com/Mayonaice/Salvadr-Portofolios",
     challenges:
       "implement an attractive UI and place a demo video of my project on this website as well as provide a chart for the skills I am proficient in",
   },

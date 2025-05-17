@@ -220,13 +220,15 @@ export default function HeroSection() {
             transition={{ duration: 0.5, delay: 1.2 }}
             className="flex gap-4 mt-8"
           >
+            <a target="_blank" href="https://github.com/Mayonaice?tab=repositories">
             <Button
               variant="ghost"
               size="icon"
               className="rounded-full hover:bg-primary/20 transition-colors duration-300"
             >
-              <Github className="h-5 w-5" />
+                <Github className="h-5 w-5" />
             </Button>
+              </a>
             <Button
               variant="ghost"
               size="icon"
